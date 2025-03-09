@@ -1,6 +1,9 @@
+// app/auth/login.js
+'use client';
+
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import api from '../../utils/api';
+import api from '../../utils/api';  // Assuming you have a utility for API requests
 
 export default function Login() {
     const [email, setEmail] = useState('');
