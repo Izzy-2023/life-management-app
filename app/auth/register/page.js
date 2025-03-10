@@ -1,6 +1,8 @@
+'use client';  // Ensure this file is treated as a client component
+
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import api from '../../utils/api';
+import { useRouter } from 'next/navigation';
+import api from '../../../utils/api';  
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -12,8 +14,8 @@ export default function Register() {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            await api.post('/auth/register', { name, email, password });
-            router.push('/auth/login');
+            await api.post('/api/auth/register', { name, email, password });
+            router.push('/api/auth/login');
         } catch (err) {
             setError(err.response.data.error);
         }

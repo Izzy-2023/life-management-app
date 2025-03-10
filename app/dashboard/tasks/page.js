@@ -1,6 +1,8 @@
+'use client';  // Ensure this file is treated as a client component
+
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import api from '../../../utils/api';
+import { useRouter } from 'next/navigation';
+import api from '../../../utils/api';  
 
 export default function CreateTask() {
     const [title, setTitle] = useState('');

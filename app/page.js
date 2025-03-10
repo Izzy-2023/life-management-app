@@ -10,14 +10,18 @@ const HomePage = () => {
   return (
     <div>
       <h1>Welcome to Your Life Management App!</h1>
-      <p>Click below to go to your tasks or login:</p>
+      <p>Click below to go to your tasks or login/register:</p>
+      
       {isAuthenticated ? (
         <Link href="/dashboard">Go to Dashboard</Link>
       ) : (
-        <Link href="/auth/login">Login</Link> 
+        <div>
+          <Link href="/auth/login">Login</Link> | <Link href="/auth/register">Register</Link>
+        </div>
       )}
     </div>
   );
 };
 
 export default HomePage;
+
