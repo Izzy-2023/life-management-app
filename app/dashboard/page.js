@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import api from '../../utils/api';
 import TaskCard from '../../components/TaskCard';
