@@ -1,9 +1,9 @@
-// app/auth/login.js
+// app/auth/login/page.js
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import api from '../../utils/api';  // Assuming you have a utility for API requests
+import { useRouter } from 'next/navigation';
+import api from '../../../utils/api';  // Adjusted path after moving the file
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ export default function Login() {
             localStorage.setItem('token', res.data.token);
             router.push('/dashboard');
         } catch (err) {
-            setError(err.response.data.error);
+            setError(err.response?.data?.error || 'Login failed');
         }
     };
 

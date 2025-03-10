@@ -3,7 +3,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Login from './auth/login';
 
 const HomePage = () => {
   const isAuthenticated = false;  // Replace with actual authentication logic
@@ -15,7 +14,7 @@ const HomePage = () => {
       {isAuthenticated ? (
         <Link href="/dashboard">Go to Dashboard</Link>
       ) : (
-        <Link href="/login">Login</Link> 
+        <Link href="/auth/login">Login</Link> 
       )}
     </div>
   );
